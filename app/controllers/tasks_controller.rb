@@ -3,7 +3,7 @@ before_action :set_task, only: [:show, :edit, :update, :destroy]
 
 
   def index
-   @task = Task.all
+   @task = Task.all.page(params[:page]).per(3)
   end
   
   def show
